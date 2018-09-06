@@ -4,25 +4,25 @@ a mumbo jumbo themed minecraft mod
 ## WORKING ON
 ## PLANNED
 * custom piston base
-..* signal strength based length
-..* stronger (push limit)
-..* two way base
-..* antibud
-..* t-flip flop
+  * signal strength based length
+  * stronger (push limit)
+  * two way base
+  * antibud
+  * t-flip flop
 * custom piston heads
-..* normal
-..* sticky
-..* toggle
-..* longer
-..* stronger
+  * normal
+  * sticky
+  * toggle
+  * longer
+  * stronger
 * half slab slimeblocks
 * redstone dimension
-..* create circuits to use in overworld
+  * create circuits to use in overworld
 * bumbo mobs  
-..* trade circuits for components
+  * trade circuits for components
 * mumbo mini bases
-..* portals to redstone world
+  * portals to redstone world
 * redstone variants
-..* greenstone (plant based)
-..* bluestone (high voltage?)
+  * greenstone (plant based)
+  * bluestone (high voltage?)
 * spoon counter 
