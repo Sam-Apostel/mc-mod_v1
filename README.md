@@ -26,3 +26,4 @@ a mumbo jumbo themed minecraft mod
   * greenstone (plant based)
   * bluestone (high voltage?)
 * spoon counter 
+* right click boat with hoe to go to redstone dimension
