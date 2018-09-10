@@ -18,12 +18,14 @@ a mumbo jumbo themed minecraft mod
 * half slab slimeblocks
 * redstone dimension
   * create circuits to use in overworld
-* bumbo mobs  
+* bumbo mobs
   * trade circuits for components
 * mumbo mini bases
   * portals to redstone world
 * redstone variants
   * greenstone (plant based)
   * bluestone (high voltage?)
+* custom music disks with elybeatmakers tracks
 * spoon counter 
 * right click boat with hoe to go to redstone dimension
+* item insert and extract from jukebox. Also comparator output according to percentage of song that has already played
