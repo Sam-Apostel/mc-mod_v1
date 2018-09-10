@@ -12,6 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -43,8 +44,7 @@ public class MumboJumboMod {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-	    ModMobs.register();
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+    	proxy.registerRenderers();
     }
 
 	@Mod.EventBusSubscriber
@@ -72,6 +72,11 @@ public class MumboJumboMod {
 			if(e.getMap() == Minecraft.getMinecraft().getTextureMapBlocks()) {
 //				e.getMap().registerSprite(customTexture);
 			}
+		}
+
+		@SubscribeEvent
+		public static void registerEntities(RegistryEvent.Register<EntityEntry> event) {
+			ModMobs.register(event);
 		}
 	}
 }
