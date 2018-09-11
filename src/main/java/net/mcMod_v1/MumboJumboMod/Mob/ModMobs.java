@@ -1,20 +1,17 @@
 package net.mcMod_v1.MumboJumboMod.Mob;
 
-import net.mcMod_v1.MumboJumboMod.Mob.models.RenderBumboCactoni;
+import net.mcMod_v1.MumboJumboMod.Mob.render.RenderBumboCactoni;
 import net.mcMod_v1.MumboJumboMod.MumboJumboMod;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.EntityEntryBuilder;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 

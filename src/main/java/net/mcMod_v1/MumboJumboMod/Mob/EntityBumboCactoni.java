@@ -7,8 +7,10 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -20,14 +22,7 @@ public class EntityBumboCactoni extends EntityLiving {
 	public int disguiseStage = 0;
 	public boolean passive = true;
 
-	public List<AxisAlignedBB> aabbs = new ArrayList(){{
-		add(new AxisAlignedBB(0.0625, 0.0, 0.0625, 0.9375, 1.0, 0.9375));
-		add(new AxisAlignedBB(0.0625, 0.0, 0.0625, 0.9375, 1.0, 0.9375));
-		add(new AxisAlignedBB(0.0625, 0.0, 0.0625, 0.9375, 1.0, 0.9375));
-		add(new AxisAlignedBB(0.0625, 0.0, 0.0625, 0.9375, 1.0, 0.9375));
-	}};
-
-	private static final Predicate<Entity> IS_RIDEABLE_MINECART = entity -> entity instanceof EntityMinecart && ((EntityMinecart) entity).canBeRidden();
+//	private static final Predicate<Entity> IS_RIDEABLE_MINECART = entity -> entity instanceof EntityMinecart && ((EntityMinecart) entity).canBeRidden();
 
 	public EntityBumboCactoni(World worldIn) {
 		super(worldIn);
@@ -40,21 +35,11 @@ public class EntityBumboCactoni extends EntityLiving {
 	}
 
 	public boolean getCanSpawnHere() {
-		System.out.println("checking for spawn");
-//		BlockPos blockpos = new BlockPos(MathHelper.floor(this.posX), 0, MathHelper.floor(this.posZ));
-//		Chunk chunk = this.world.getChunkFromBlockCoords(blockpos);
-
-//		if (this.world.getDifficulty() != EnumDifficulty.PEACEFUL) {
-//		Biome biome = this.world.getBiome(blockpos);
-		System.out.println(getPosition());
-		System.out.println(Blocks.CACTUS.canBlockStay(this.world, getPosition()));
 		if(Blocks.CACTUS.canBlockStay(this.world, getPosition())) {
 			if (this.rand.nextFloat() < 0.5F && this.world.getLightFromNeighbors(new BlockPos(this)) >= 8) {
-				System.out.println("can spawn");
 				return super.getCanSpawnHere();
 			}
 		}
-
 		return false;
 	}
 
@@ -66,6 +51,37 @@ public class EntityBumboCactoni extends EntityLiving {
 		this.prevRenderYawOffset = 180.0F;
 		this.renderYawOffset = 180.0F;
 		this.rotationYaw = 180.0F;
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		this.setEntityBoundingBox(new AxisAlignedBB(this.posX - 0.4375D, this.posY, this.posZ - 0.4375D, this.posX + 0.4375D, this.posY + 1.0D, this.posZ + 0.4375D));
+
+		BlockPos beginBlockPos = getPosition();
+		if(!(prevPosX == posX && prevPosY == posY && prevPosZ == posZ)) {
+			System.out.println(prevPosX + " , " + posX);
+			System.out.println(prevPosY + " , " + posY);
+			System.out.println(prevPosZ + " , " + posZ);
+
+			prevPosX = posX;
+			prevPosY = posY;
+			prevPosZ = posZ;
+			this.lastTickPosX = this.posX;
+			this.lastTickPosY = this.posY;
+			this.lastTickPosZ = this.posZ;
+		}
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		super.attackEntityFrom(source, amount);
+
+		this.motionX = 0.0D;
+		this.motionY = 0.0D;
+		this.motionZ = 0.0D;
+
+		return false;
 	}
 
 	public float getEyeHeight()
@@ -95,11 +111,6 @@ public class EntityBumboCactoni extends EntityLiving {
 		return 0.0F;
 	}
 
-
-
-
-
-
 	@Override
 	public boolean canBePushed() {
 		return false;
@@ -108,18 +119,18 @@ public class EntityBumboCactoni extends EntityLiving {
 	@Override
 	protected void collideWithEntity(Entity entityIn) {}
 
-	@Override
-	protected void collideWithNearbyEntities() {
-		List<Entity> list = this.world.getEntitiesInAABBexcluding(this, this.getEntityBoundingBox(), IS_RIDEABLE_MINECART);
-
-		for (int i = 0; i < list.size(); ++i) {
-			Entity entity = list.get(i);
-
-			if (this.getDistanceSq(entity) <= 0.2D) {
-				entity.applyEntityCollision(this);
-			}
-		}
-	}
+//	@Override
+//	protected void collideWithNearbyEntities() {
+//		List<Entity> list = this.world.getEntitiesInAABBexcluding(this, this.getEntityBoundingBox(), IS_RIDEABLE_MINECART);
+//
+//		for (int i = 0; i < list.size(); ++i) {
+//			Entity entity = list.get(i);
+//
+//			if (this.getDistanceSq(entity) <= 0.2D) {
+//				entity.applyEntityCollision(this);
+//			}
+//		}
+//	}
 
 	@Override
 	public boolean isPushedByWater() {
@@ -129,17 +140,7 @@ public class EntityBumboCactoni extends EntityLiving {
 	@Override
 	@Nullable
 	public AxisAlignedBB getCollisionBoundingBox() {
-		return this.isEntityAlive() ? getBumboBoundingBox() : null;
-	}
-
-	public AxisAlignedBB getBumboBoundingBox() {
-		return aabbs.get(disguiseStage);
-	}
-
-	@Override
-	@Nullable
-	public AxisAlignedBB getCollisionBox(Entity entityIn) {
-		return entityIn.canBePushed() ? getBumboBoundingBox() : null;
+		return this.isEntityAlive() ? getEntityBoundingBox() : null;
 	}
 
 }

@@ -1,8 +1,8 @@
-package net.mcMod_v1.MumboJumboMod.Mob.models;
+package net.mcMod_v1.MumboJumboMod.Mob.render;
 
 import net.mcMod_v1.MumboJumboMod.Mob.EntityBumboCactoni;
+import net.mcMod_v1.MumboJumboMod.Mob.model.ModelBumboCactoni;
 import net.minecraft.client.model.ModelBlaze;
-import net.minecraft.client.model.ModelPig;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,10 +11,10 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 public class RenderBumboCactoni extends RenderLiving<EntityBumboCactoni> {
 	public static RenderBumboCactoni.RenderBumboCactoniFactory FACTORY = new RenderBumboCactoniFactory();
-	private static final ResourceLocation BLAZE_TEXTURES = new ResourceLocation("minecraft:","textures/entity/blaze.png");
+	private static final ResourceLocation BLAZE_TEXTURES = new ResourceLocation("minecraft","textures/entity/blaze.png");
 
 	public RenderBumboCactoni(RenderManager renderManager) {
-		super(renderManager, new ModelBlaze(), 0.7F);
+		super(renderManager, new ModelBumboCactoni(), 0.0F);
 	}
 
 

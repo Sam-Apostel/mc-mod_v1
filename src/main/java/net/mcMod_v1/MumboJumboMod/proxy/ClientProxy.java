@@ -1,15 +1,12 @@
 package net.mcMod_v1.MumboJumboMod.proxy;
 
-import net.mcMod_v1.MumboJumboMod.Mob.EntityBumboCactoni;
 import net.mcMod_v1.MumboJumboMod.Mob.ModMobs;
-import net.mcMod_v1.MumboJumboMod.Mob.models.RenderBumboCactoni;
 import net.mcMod_v1.MumboJumboMod.MumboJumboMod;
 import net.mcMod_v1.MumboJumboMod.item.ItemBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends CommonProxy {
 

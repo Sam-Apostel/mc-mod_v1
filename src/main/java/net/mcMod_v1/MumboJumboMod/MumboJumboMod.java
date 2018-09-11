@@ -40,12 +40,13 @@ public class MumboJumboMod {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+	    proxy.registerRenderers();
     	logger = event.getModLog();
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-    	proxy.registerRenderers();
+
     }
 
 	@Mod.EventBusSubscriber
