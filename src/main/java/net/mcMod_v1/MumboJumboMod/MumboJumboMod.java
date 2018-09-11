@@ -20,6 +20,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.Logger;
 import sun.nio.fs.RegistryFileTypeDetector;
 
@@ -76,7 +77,11 @@ public class MumboJumboMod {
 
 		@SubscribeEvent
 		public static void registerEntities(RegistryEvent.Register<EntityEntry> event) {
-			ModMobs.register(event);
+			IForgeRegistry<EntityEntry> registry = event.getRegistry();
+			for(EntityEntry entry : ModMobs.getEntities()) {
+				registry.register(entry);
+			}
+//			ModMobs.getEntities().forEach(registry::register);
 		}
 	}
 }

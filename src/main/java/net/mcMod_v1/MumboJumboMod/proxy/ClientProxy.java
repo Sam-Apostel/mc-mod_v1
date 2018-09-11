@@ -1,19 +1,14 @@
 package net.mcMod_v1.MumboJumboMod.proxy;
 
-import net.mcMod_v1.MumboJumboMod.Mob.BumboCactoni;
-import net.mcMod_v1.MumboJumboMod.Mob.models.BumboCactoniModel;
-import net.mcMod_v1.MumboJumboMod.Mob.models.BumboCactoniRenderer;
+import net.mcMod_v1.MumboJumboMod.Mob.EntityBumboCactoni;
+import net.mcMod_v1.MumboJumboMod.Mob.ModMobs;
+import net.mcMod_v1.MumboJumboMod.Mob.models.RenderBumboCactoni;
 import net.mcMod_v1.MumboJumboMod.MumboJumboMod;
 import net.mcMod_v1.MumboJumboMod.item.ItemBase;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends CommonProxy {
@@ -35,14 +30,10 @@ public class ClientProxy extends CommonProxy {
 	
 	@Override
 	public void registerRenderers() {
-		IRenderFactory<BumboCactoni> renderer = new IRenderFactory<BumboCactoni>() {
-			@Override
-			public Render<? super BumboCactoni> createRenderFor(RenderManager manager)
-			{
-				return new BumboCactoniRenderer(manager);
-			}
-		};
-		RenderingRegistry.registerEntityRenderingHandler(BumboCactoni.class, renderer);
+		System.out.println("registering renderers");
+//		RenderingRegistry.registerEntityRenderingHandler(EntityBumboCactoni.class, RenderBumboCactoni.FACTORY);
+		ModMobs.regRenders();
+		System.out.println("finished registering renderers");
 	}
 
 }
