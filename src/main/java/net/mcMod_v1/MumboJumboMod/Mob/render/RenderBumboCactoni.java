@@ -11,15 +11,14 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 public class RenderBumboCactoni extends RenderLiving<EntityBumboCactoni> {
 	public static RenderBumboCactoni.RenderBumboCactoniFactory FACTORY = new RenderBumboCactoniFactory();
-	private static final ResourceLocation BLAZE_TEXTURES = new ResourceLocation("minecraft","textures/entity/blaze.png");
+	public static final ResourceLocation TEXTURE_BUMBO_CACTONI = new ResourceLocation("mumbo_jumbo_mod","textures/entity/bumbo_cactoni.png");
 
 	public RenderBumboCactoni(RenderManager renderManager) {
 		super(renderManager, new ModelBumboCactoni(), 0.0F);
 	}
 
-
 	protected ResourceLocation getEntityTexture(EntityBumboCactoni entity) {
-		return BLAZE_TEXTURES;
+		return TEXTURE_BUMBO_CACTONI;
 	}
 
 	public static class RenderBumboCactoniFactory implements IRenderFactory<EntityBumboCactoni> {

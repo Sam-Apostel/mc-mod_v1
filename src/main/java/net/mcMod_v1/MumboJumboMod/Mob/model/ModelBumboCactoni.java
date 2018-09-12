@@ -1,23 +1,31 @@
 package net.mcMod_v1.MumboJumboMod.Mob.model;
 
-import net.minecraft.block.BlockCactus;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.BlockRendererDispatcher;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.block.model.BakedQuad;
+import net.minecraft.client.renderer.block.model.IBakedModel;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
+
+import java.util.List;
 
 public class ModelBumboCactoni extends ModelBase {
 	/** The slime's bodies, both the inside box and the outside box */
 	ModelRenderer body;
+	String iconName;
 
 	public ModelBumboCactoni() {
 		this.body = new ModelRenderer(this, 0, 0);
-		this.body.addBox(-0.5f, 3.0f, -0.5f, 1, 1, 1);
+		this.body.setTextureSize(16, 16);
+
+		this.body.addBox(-7f, 9.0f, -7f, 14, 16, 14);
 	}
 
 	/**
@@ -35,7 +43,7 @@ public class ModelBumboCactoni extends ModelBase {
 			GlStateManager.translate(-0.5F, -1.5F, 0.5F);
 
 			IBlockState state = Blocks.CACTUS.getDefaultState();
-			dispatcher.renderBlockBrightness(state, 1.0F);
+			dispatcher.renderBlockBrightness(state, 1.0f);
 
 			GlStateManager.translate(0.0F, 0.0F, 0.0F);
 			GlStateManager.rotate(0.0f, 0.0f, 0.0f, 0.0f);
@@ -44,10 +52,11 @@ public class ModelBumboCactoni extends ModelBase {
 
 		this.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entityIn);
 		GlStateManager.pushMatrix();
-		GlStateManager.translate(0.0F, 0.6F, 0.0F);
+		GlStateManager.translate(0.0f, -1f, 0.0f);
 
 		this.body.render(scale);
 
+		GlStateManager.translate(0.0f, 0.0f, 0.0f);
 		GlStateManager.popMatrix();
 	}
 }

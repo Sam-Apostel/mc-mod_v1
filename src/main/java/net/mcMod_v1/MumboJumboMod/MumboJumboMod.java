@@ -6,13 +6,10 @@ import net.mcMod_v1.MumboJumboMod.item.ModItems;
 import net.mcMod_v1.MumboJumboMod.proxy.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
-import net.minecraft.entity.Entity;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -22,7 +19,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.Logger;
-import sun.nio.fs.RegistryFileTypeDetector;
 
 @Mod(modid = MumboJumboMod.MODID, name = MumboJumboMod.NAME, version = MumboJumboMod.VERSION)
 public class MumboJumboMod {
