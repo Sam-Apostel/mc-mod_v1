@@ -1,6 +1,6 @@
 package net.mcMod_v1.MumboJumboMod;
 
-import net.mcMod_v1.MumboJumboMod.Mob.ModMobs;
+import net.mcMod_v1.MumboJumboMod.entity.ModMobs;
 import net.mcMod_v1.MumboJumboMod.block.ModBlocks;
 import net.mcMod_v1.MumboJumboMod.commands.CommandDimensionTeleport;
 import net.mcMod_v1.MumboJumboMod.init.BiomeInit;

@@ -1,6 +1,6 @@
-package net.mcMod_v1.MumboJumboMod.Mob;
+package net.mcMod_v1.MumboJumboMod.entity;
 
-import net.mcMod_v1.MumboJumboMod.Mob.render.RenderBumboCactoni;
+import net.mcMod_v1.MumboJumboMod.entity.render.RenderBumboCactoni;
 import net.mcMod_v1.MumboJumboMod.MumboJumboMod;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;

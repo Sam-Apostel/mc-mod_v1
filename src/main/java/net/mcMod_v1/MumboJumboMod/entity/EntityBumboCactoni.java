@@ -1,4 +1,4 @@
-package net.mcMod_v1.MumboJumboMod.Mob;
+package net.mcMod_v1.MumboJumboMod.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -15,10 +15,12 @@ public class EntityBumboCactoni extends EntityLiving {
 	public int disguiseStage = 0;
 	public boolean passive = true;
 
+//	private static final Predicate<entity> IS_RIDEABLE_MINECART = entity -> entity instanceof EntityMinecart && ((EntityMinecart) entity).canBeRidden();
 
 	public EntityBumboCactoni(World worldIn) {
 		super(worldIn);
-		setSize(0.875f, 3.0f);
+		setSize(0.875f, 1.0f);
+
 	}
 
 	protected void initEntityAI() {
@@ -37,7 +39,7 @@ public class EntityBumboCactoni extends EntityLiving {
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		this.motionX = 0.0D;
-		//this.motionY = 0.0D;
+		this.motionY = 0.0D;
 		this.motionZ = 0.0D;
 		this.prevRenderYawOffset = 180.0F;
 		this.renderYawOffset = 180.0F;
@@ -47,7 +49,7 @@ public class EntityBumboCactoni extends EntityLiving {
 	@Override
 	public void onUpdate() {
 		super.onUpdate();
-		this.setEntityBoundingBox(new AxisAlignedBB(this.posX - 0.4375D, this.posY, this.posZ - 0.4375D, this.posX + 0.4375D, this.posY + 2.8D, this.posZ + 0.4375D));
+		this.setEntityBoundingBox(new AxisAlignedBB(this.posX - 0.4375D, this.posY, this.posZ - 0.4375D, this.posX + 0.4375D, this.posY + 1.0D, this.posZ + 0.4375D));
 
 		BlockPos beginBlockPos = getPosition();
 		if(!(prevPosX == posX && prevPosY == posY && prevPosZ == posZ)) {
@@ -77,7 +79,7 @@ public class EntityBumboCactoni extends EntityLiving {
 
 	public float getEyeHeight()
 	{
-		return 1.8F;
+		return 0.5F;
 	}
 
 	public int getVerticalFaceSpeed()
@@ -112,10 +114,10 @@ public class EntityBumboCactoni extends EntityLiving {
 
 //	@Override
 //	protected void collideWithNearbyEntities() {
-//		List<Entity> list = this.world.getEntitiesInAABBexcluding(this, this.getEntityBoundingBox(), IS_RIDEABLE_MINECART);
+//		List<entity> list = this.world.getEntitiesInAABBexcluding(this, this.getEntityBoundingBox(), IS_RIDEABLE_MINECART);
 //
 //		for (int i = 0; i < list.size(); ++i) {
-//			Entity entity = list.get(i);
+//			entity entity = list.get(i);
 //
 //			if (this.getDistanceSq(entity) <= 0.2D) {
 //				entity.applyEntityCollision(this);
@@ -125,7 +127,7 @@ public class EntityBumboCactoni extends EntityLiving {
 
 	@Override
 	public boolean isPushedByWater() {
-		return true;
+		return false;
 	}
 
 	@Override

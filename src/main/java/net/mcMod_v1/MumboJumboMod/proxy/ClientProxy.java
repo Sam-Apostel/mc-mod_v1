@@ -1,6 +1,6 @@
 package net.mcMod_v1.MumboJumboMod.proxy;
 
-import net.mcMod_v1.MumboJumboMod.Mob.ModMobs;
+import net.mcMod_v1.MumboJumboMod.entity.ModMobs;
 import net.mcMod_v1.MumboJumboMod.MumboJumboMod;
 import net.mcMod_v1.MumboJumboMod.item.ItemBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
