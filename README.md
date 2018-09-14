@@ -1,7 +1,10 @@
 # mc-mod_v1
 a mumbo jumbo themed minecraft mod
 ## IMPLEMENTED
+* bumbo cactoni model
 ## WORKING ON
+* redstone dimension
+* bumbo cactoni behaviour
 ## PLANNED
 * custom piston base
   * signal strength based length
