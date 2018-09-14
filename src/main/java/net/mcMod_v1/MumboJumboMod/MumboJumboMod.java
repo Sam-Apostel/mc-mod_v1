@@ -2,6 +2,9 @@ package net.mcMod_v1.MumboJumboMod;
 
 import net.mcMod_v1.MumboJumboMod.Mob.ModMobs;
 import net.mcMod_v1.MumboJumboMod.block.ModBlocks;
+import net.mcMod_v1.MumboJumboMod.commands.CommandDimensionTeleport;
+import net.mcMod_v1.MumboJumboMod.init.BiomeInit;
+import net.mcMod_v1.MumboJumboMod.init.DimensionInit;
 import net.mcMod_v1.MumboJumboMod.item.ModItems;
 import net.mcMod_v1.MumboJumboMod.proxy.CommonProxy;
 import net.minecraft.block.Block;
@@ -15,6 +18,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -44,6 +48,8 @@ public class MumboJumboMod {
     public void init(FMLInitializationEvent event) {
 
     }
+    @EventHandler
+	public static void serverInit(FMLServerStartingEvent event){RegistrationHandler.serverRegistries(event);}
 
 	@Mod.EventBusSubscriber
 	public static class RegistrationHandler {
@@ -79,6 +85,15 @@ public class MumboJumboMod {
 				registry.register(entry);
 			}
 //			ModMobs.getEntities().forEach(registry::register);
+		}
+        public static void preInitRegistries(){
+            BiomeInit.registerBiomes();
+            DimensionInit.registerDimensions();
+            System.out.println("Dimension registered");
+        }
+
+		public static void serverRegistries(FMLServerStartingEvent event){
+			event.registerServerCommand(new CommandDimensionTeleport());
 		}
 	}
 }

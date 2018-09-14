@@ -2,7 +2,7 @@ package net.mcMod_v1.MumboJumboMod.Mob.render;
 
 import net.mcMod_v1.MumboJumboMod.Mob.EntityBumboCactoni;
 import net.mcMod_v1.MumboJumboMod.Mob.model.ModelBumboCactoni;
-import net.minecraft.client.model.ModelBlaze;
+import net.mcMod_v1.MumboJumboMod.MumboJumboMod;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -11,20 +11,19 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 public class RenderBumboCactoni extends RenderLiving<EntityBumboCactoni> {
 	public static RenderBumboCactoni.RenderBumboCactoniFactory FACTORY = new RenderBumboCactoniFactory();
-	public static final ResourceLocation TEXTURE_BUMBO_CACTONI = new ResourceLocation("mumbo_jumbo_mod","textures/entity/bumbo_cactoni.png");
+	private static final ResourceLocation TEXTURE_BUMBO_CACTONI = new ResourceLocation(MumboJumboMod.MODID +":textures/entity/bumbo_cactoni.png");
 
-	public RenderBumboCactoni(RenderManager renderManager) {
-		super(renderManager, new ModelBumboCactoni(), 0.0F);
+	private RenderBumboCactoni(RenderManager renderManager){
+	    super(renderManager, new ModelBumboCactoni(), 0.0F);
 	}
-
-	protected ResourceLocation getEntityTexture(EntityBumboCactoni entity) {
+	@Override
+	protected ResourceLocation getEntityTexture(EntityBumboCactoni entity){
 		return TEXTURE_BUMBO_CACTONI;
 	}
 
-	public static class RenderBumboCactoniFactory implements IRenderFactory<EntityBumboCactoni> {
-
+	public static class RenderBumboCactoniFactory implements IRenderFactory<EntityBumboCactoni>{
 		@Override
-		public Render<? super EntityBumboCactoni> createRenderFor(RenderManager manager) {
+		public Render<? super EntityBumboCactoni> createRenderFor(RenderManager manager){
 			return new RenderBumboCactoni(manager);
 		}
 	}

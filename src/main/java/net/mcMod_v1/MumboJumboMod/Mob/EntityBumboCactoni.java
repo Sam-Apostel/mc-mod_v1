@@ -1,33 +1,24 @@
 package net.mcMod_v1.MumboJumboMod.Mob;
 
-import com.google.common.base.Predicate;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.item.EntityMinecart;
-import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class EntityBumboCactoni extends EntityLiving {
 
 	public int disguiseStage = 0;
 	public boolean passive = true;
 
-//	private static final Predicate<Entity> IS_RIDEABLE_MINECART = entity -> entity instanceof EntityMinecart && ((EntityMinecart) entity).canBeRidden();
 
 	public EntityBumboCactoni(World worldIn) {
 		super(worldIn);
-		setSize(0.875f, 1.0f);
-
+		setSize(0.875f, 3.0f);
 	}
 
 	protected void initEntityAI() {
@@ -46,7 +37,7 @@ public class EntityBumboCactoni extends EntityLiving {
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		this.motionX = 0.0D;
-		this.motionY = 0.0D;
+		//this.motionY = 0.0D;
 		this.motionZ = 0.0D;
 		this.prevRenderYawOffset = 180.0F;
 		this.renderYawOffset = 180.0F;
@@ -56,7 +47,7 @@ public class EntityBumboCactoni extends EntityLiving {
 	@Override
 	public void onUpdate() {
 		super.onUpdate();
-		this.setEntityBoundingBox(new AxisAlignedBB(this.posX - 0.4375D, this.posY, this.posZ - 0.4375D, this.posX + 0.4375D, this.posY + 1.0D, this.posZ + 0.4375D));
+		this.setEntityBoundingBox(new AxisAlignedBB(this.posX - 0.4375D, this.posY, this.posZ - 0.4375D, this.posX + 0.4375D, this.posY + 2.8D, this.posZ + 0.4375D));
 
 		BlockPos beginBlockPos = getPosition();
 		if(!(prevPosX == posX && prevPosY == posY && prevPosZ == posZ)) {
@@ -86,7 +77,7 @@ public class EntityBumboCactoni extends EntityLiving {
 
 	public float getEyeHeight()
 	{
-		return 0.5F;
+		return 1.8F;
 	}
 
 	public int getVerticalFaceSpeed()
@@ -134,7 +125,7 @@ public class EntityBumboCactoni extends EntityLiving {
 
 	@Override
 	public boolean isPushedByWater() {
-		return false;
+		return true;
 	}
 
 	@Override
