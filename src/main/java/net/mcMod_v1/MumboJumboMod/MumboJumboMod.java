@@ -41,6 +41,11 @@ public class MumboJumboMod {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 	    proxy.registerRenderers();
+
+	    BiomeInit.registerBiomes();
+	    DimensionInit.registerDimensions();
+	    System.out.println("Dimension registered");
+
     	logger = event.getModLog();
     }
 
@@ -80,12 +85,13 @@ public class MumboJumboMod {
 
 		@SubscribeEvent
 		public static void registerEntities(RegistryEvent.Register<EntityEntry> event) {
-			IForgeRegistry<EntityEntry> registry = event.getRegistry();
-			for(EntityEntry entry : ModMobs.getEntities()) {
-				registry.register(entry);
-			}
-//			ModMobs.getEntities().forEach(registry::register);
+//			IForgeRegistry<EntityEntry> registry = event.getRegistry();
+//			for(EntityEntry entry : ModMobs.getEntities()) {
+//				registry.register(entry);
+//			}
+			ModMobs.getEntities().forEach(event.getRegistry()::register);
 		}
+
         public static void preInitRegistries(){
             BiomeInit.registerBiomes();
             DimensionInit.registerDimensions();

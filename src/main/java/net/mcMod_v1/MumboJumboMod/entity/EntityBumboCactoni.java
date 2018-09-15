@@ -102,10 +102,6 @@ public class EntityBumboCactoni extends EntityLiving {
 
 		BlockPos beginBlockPos = getPosition();
 		if(!(prevPosX == posX && prevPosY == posY && prevPosZ == posZ)) {
-			System.out.println(prevPosX + " , " + posX);
-			System.out.println(prevPosY + " , " + posY);
-			System.out.println(prevPosZ + " , " + posZ);
-
 			prevPosX = posX;
 			prevPosY = posY;
 			prevPosZ = posZ;

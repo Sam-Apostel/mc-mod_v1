@@ -8,8 +8,8 @@ import net.minecraft.world.biome.BiomeProviderSingle;
 import net.minecraft.world.gen.ChunkGeneratorFlat;
 import net.minecraft.world.gen.IChunkGenerator;
 
-public class DimensionRedstone extends WorldProvider{
-    public DimensionRedstone(){
+public class DimensionRedstone extends WorldProvider {
+    public DimensionRedstone() {
         this.biomeProvider = new BiomeProviderSingle(BiomeInit.REDSTONE_DIMENSION);
     }
     @Override
