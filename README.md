@@ -1,7 +1,8 @@
 # mc-mod_v1
 a mumbo jumbo themed minecraft mod
 ## IMPLEMENTED
-* bumbo cactoni model
+* 3 different bumbo cactoni models: small, medium, large
+* bumbo cactoni grows like normal cacti
 ## WORKING ON
 * redstone dimension
 * bumbo cactoni behaviour
