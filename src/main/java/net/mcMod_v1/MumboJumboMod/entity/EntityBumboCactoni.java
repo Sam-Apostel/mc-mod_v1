@@ -3,6 +3,10 @@ package net.mcMod_v1.MumboJumboMod.entity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.init.Blocks;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -12,19 +16,64 @@ import javax.annotation.Nullable;
 
 public class EntityBumboCactoni extends EntityLiving {
 
+	public static final DataParameter<Integer> SIZE = EntityDataManager.createKey(EntityBumboCactoni.class, DataSerializers.VARINT);
 	public int disguiseStage = 0;
-	public boolean passive = true;
-
-//	private static final Predicate<entity> IS_RIDEABLE_MINECART = entity -> entity instanceof EntityMinecart && ((EntityMinecart) entity).canBeRidden();
+	public int age = 0;
 
 	public EntityBumboCactoni(World worldIn) {
 		super(worldIn);
 		setSize(0.875f, 1.0f);
-
 	}
 
-	protected void initEntityAI() {
-//		this.targetTasks.addTask(1, new EntityAIFindEntityNearestPlayer(this));
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(SIZE, Integer.valueOf(1));
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+		if(dataManager.get(SIZE) < 3) {
+			int rand = Math.round((float) Math.random() * 4051.0f - 0.5f);
+			int speed = world.getGameRules().getInt("randomTickSpeed");
+			if(rand <= (1 * speed) - 1) {
+				if(this.age < 15) {
+					age++;
+				} else {
+					age = 0;
+					setBumboCactoniSize(dataManager.get(SIZE) + 1);
+				}
+			}
+		}
+	}
+
+	private void setBumboCactoniSize(int size) {
+		size = size > 3 ? 3 : (size < 1 ? 1 : size);
+		dataManager.set(SIZE, size);
+		setSize(0.875f, (float) size);
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound)
+	{
+		super.readEntityFromNBT(compound);
+		if(compound.hasKey("disguiseStage")) {
+			this.disguiseStage = compound.getInteger("disguiseStage");
+		}
+		if(compound.hasKey("age")) {
+			this.age = compound.getInteger("age");
+		}
+		if(compound.hasKey("size")) {
+			dataManager.set(SIZE, compound.getInteger("size"));
+		}
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("disguiseStage", this.disguiseStage);
+		compound.setInteger("age", this.age);
+		compound.setInteger("size", dataManager.get(SIZE));
 	}
 
 	public boolean getCanSpawnHere() {
@@ -77,9 +126,8 @@ public class EntityBumboCactoni extends EntityLiving {
 		return false;
 	}
 
-	public float getEyeHeight()
-	{
-		return 0.5F;
+	public float getEyeHeight() {
+		return (float) dataManager.get(SIZE) - 0.2f;
 	}
 
 	public int getVerticalFaceSpeed()
@@ -111,19 +159,6 @@ public class EntityBumboCactoni extends EntityLiving {
 
 	@Override
 	protected void collideWithEntity(Entity entityIn) {}
-
-//	@Override
-//	protected void collideWithNearbyEntities() {
-//		List<entity> list = this.world.getEntitiesInAABBexcluding(this, this.getEntityBoundingBox(), IS_RIDEABLE_MINECART);
-//
-//		for (int i = 0; i < list.size(); ++i) {
-//			entity entity = list.get(i);
-//
-//			if (this.getDistanceSq(entity) <= 0.2D) {
-//				entity.applyEntityCollision(this);
-//			}
-//		}
-//	}
 
 	@Override
 	public boolean isPushedByWater() {
