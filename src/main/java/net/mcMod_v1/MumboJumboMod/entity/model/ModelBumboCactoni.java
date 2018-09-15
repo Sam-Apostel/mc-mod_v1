@@ -117,10 +117,9 @@ public class ModelBumboCactoni extends ModelBase {
 		/*
 		All the parts of the small size Bumbo Cactoni given their properties
 	    */
-		this.hat_10_s1 = new ModelRenderer(this, 0, 128);
+		this.hat_10_s1 = new ModelRenderer(this, 29, 127);
 		this.hat_10_s1.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_10_s1.addBox(-5.0F, -9.0F, -5.0F, 10, 8, 10, 0.0F);
-		this.setRotateAngle(hat_10_s1, 0.017453292519943295F, 0.0F, 0.0F);
 		this.hat_02_s1 = new ModelRenderer(this, 19, 105);
 		this.hat_02_s1.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_02_s1.addBox(-9.0F, -2.0F, -10.0F, 1, 2, 20, 0.0F);
@@ -173,13 +172,13 @@ public class ModelBumboCactoni extends ModelBase {
 		this.mouth_0_s1 = new ModelRenderer(this, 12, 3);
 		this.mouth_0_s1.setRotationPoint(-3.0F, -10.0F, -7.2F);
 		this.mouth_0_s1.addBox(0.0F, 0.0F, 0.0F, 1, 2, 1, 0.0F);
-		this.hat_20_s1 = new ModelRenderer(this, 19, 105);
+		this.hat_20_s1 = new ModelRenderer(this, 18, 105);
 		this.hat_20_s1.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_20_s1.addBox(8.0F, -2.0F, -10.0F, 1, 2, 20, 0.0F);
 		this.moustache_4_s1 = new ModelRenderer(this, 12, 0);
 		this.moustache_4_s1.setRotationPoint(-8.0F, -12.0F, -8.0F);
 		this.moustache_4_s1.addBox(0.0F, 0.0F, 0.0F, 1, 1, 1, 0.0F);
-		this.hat_11_s1 = new ModelRenderer(this, 8, 130);
+		this.hat_11_s1 = new ModelRenderer(this, 29, 59);
 		this.hat_11_s1.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_11_s1.addBox(-4.0F, -14.0F, -4.0F, 8, 5, 8, 0.0F);
 		this.hat_main_s1 = new ModelRenderer(this, 0, 103);
@@ -246,7 +245,7 @@ public class ModelBumboCactoni extends ModelBase {
 		this.moustache_3_s2 = new ModelRenderer(this, 12, 0);
 		this.moustache_3_s2.setRotationPoint(2.0F, -23.0F, -8.0F);
 		this.moustache_3_s2.addBox(0.0F, 0.0F, 0.0F, 6, 1, 1, 0.0F);
-		this.hat_21_s2 = new ModelRenderer(this, 6, 106);
+		this.hat_21_s2 = new ModelRenderer(this, 6, 107);
 		this.hat_21_s2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_21_s2.addBox(11.0F, -2.0F, -9.0F, 1, 2, 18, 0.0F);
 		this.body_2_s2 = new ModelRenderer(this, 64, 0);
@@ -256,10 +255,10 @@ public class ModelBumboCactoni extends ModelBase {
 		this.moustache_4_s2 = new ModelRenderer(this, 12, 0);
 		this.moustache_4_s2.setRotationPoint(-8.0F, -24.0F, -8.0F);
 		this.moustache_4_s2.addBox(0.0F, 0.0F, 0.0F, 1, 1, 1, 0.0F);
-		this.hat_ext_0_s2 = new ModelRenderer(this, 19, 102);
+		this.hat_ext_0_s2 = new ModelRenderer(this, 19, 103);
 		this.hat_ext_0_s2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_ext_0_s2.addBox(-10.0F, -2.0F, -11.0F, 1, 2, 22, 0.0F);
-		this.hat_ext_1_s2 = new ModelRenderer(this, 18, 102);
+		this.hat_ext_1_s2 = new ModelRenderer(this, 18, 103);
 		this.hat_ext_1_s2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_ext_1_s2.addBox(9.0F, -2.0F, -11.0F, 1, 2, 22, 0.0F);
 		this.amr_11_s2 = new ModelRenderer(this, 0, 13);
@@ -300,13 +299,13 @@ public class ModelBumboCactoni extends ModelBase {
 		this.body_0_s2 = new ModelRenderer(this, 33, 0);
 		this.body_0_s2.setRotationPoint(0.0F, 24.0F, 0.0F);
 		this.body_0_s2.addBox(-8.0F, -32.0F, -7.0F, 16, 32, 0, 0.0F);
-		this.hat_22_s2 = new ModelRenderer(this, 5, 108);
+		this.hat_22_s2 = new ModelRenderer(this, 5, 109);
 		this.hat_22_s2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_22_s2.addBox(12.0F, -2.0F, -8.0F, 1, 2, 16, 0.0F);
-		this.hat_10_s2 = new ModelRenderer(this, 29, 54);
+		this.hat_10_s2 = new ModelRenderer(this, 29, 55);
 		this.hat_10_s2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_10_s2.addBox(-6.0F, -9.0F, -6.0F, 12, 8, 12, 0.0F);
-		this.hat_main_s2 = new ModelRenderer(this, 0, 100);
+		this.hat_main_s2 = new ModelRenderer(this, 0, 101);
 		this.hat_main_s2.setRotationPoint(0.0F, -32.0F, 0.0F);
 		this.hat_main_s2.addBox(-9.0F, -2.0F, -12.0F, 18, 2, 24, 0.0F);
 		this.mouth_2_s2 = new ModelRenderer(this, 12, 3);
@@ -315,16 +314,16 @@ public class ModelBumboCactoni extends ModelBase {
 		this.body_1_s2 = new ModelRenderer(this, 64, 0);
 		this.body_1_s2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.body_1_s2.addBox(-8.0F, -32.0F, 7.0F, 16, 32, 0, 0.0F);
-		this.hat_20_s2 = new ModelRenderer(this, 17, 104);
+		this.hat_20_s2 = new ModelRenderer(this, 17, 105);
 		this.hat_20_s2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_20_s2.addBox(10.0F, -2.0F, -10.0F, 1, 2, 20, 0.0F);
-		this.hat_00_s2 = new ModelRenderer(this, 6, 108);
+		this.hat_00_s2 = new ModelRenderer(this, 6, 109);
 		this.hat_00_s2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_00_s2.addBox(-13.0F, -2.0F, -8.0F, 1, 2, 16, 0.0F);
 		this.moustache_5_s2 = new ModelRenderer(this, 12, 0);
 		this.moustache_5_s2.setRotationPoint(7.0F, -24.0F, -8.0F);
 		this.moustache_5_s2.addBox(0.0F, 0.0F, 0.0F, 1, 1, 1, 0.0F);
-		this.hat_11_s2 = new ModelRenderer(this, 29, 56);
+		this.hat_11_s2 = new ModelRenderer(this, 29, 57);
 		this.hat_11_s2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_11_s2.addBox(-5.0F, -14.0F, -5.0F, 10, 5, 10, 0.0F);
 		this.arm_00_s2 = new ModelRenderer(this, -7, 63);
@@ -338,10 +337,10 @@ public class ModelBumboCactoni extends ModelBase {
 		this.amr_01_s2.setRotationPoint(8.5F, 0.0F, 0.0F);
 		this.amr_01_s2.addBox(-3.5F, -13.5F, -3.5F, 7, 10, 7, 0.0F);
 		this.setRotateAngle(amr_01_s2, 0.0F, 0.005235987755982988F, 0.0F);
-		this.hat_02_s2 = new ModelRenderer(this, 18, 104);
+		this.hat_02_s2 = new ModelRenderer(this, 18, 105);
 		this.hat_02_s2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_02_s2.addBox(-11.0F, -2.0F, -10.0F, 1, 2, 20, 0.0F);
-		this.hat_01_s2 = new ModelRenderer(this, 7, 106);
+		this.hat_01_s2 = new ModelRenderer(this, 7, 107);
 		this.hat_01_s2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_01_s2.addBox(-12.0F, -2.0F, -9.0F, 1, 2, 18, 0.0F);
 		this.body_0_s2.addChild(this.moustache_3_s2);
@@ -381,7 +380,7 @@ public class ModelBumboCactoni extends ModelBase {
 		this.moustache_1_s3 = new ModelRenderer(this, 12, 0);
 		this.moustache_1_s3.setRotationPoint(0.0F, -40.0F, -8.0F);
 		this.moustache_1_s3.addBox(0.0F, 0.0F, 0.0F, 6, 1, 1, 0.0F);
-		this.hat_01_s3 = new ModelRenderer(this, 7, 106);
+		this.hat_01_s3 = new ModelRenderer(this, 7, 107);
 		this.hat_01_s3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_01_s3.addBox(-12.0F, -2.0F, -9.0F, 1, 2, 18, 0.0F);
 		this.moustache_4_s3 = new ModelRenderer(this, 12, 0);
@@ -412,13 +411,13 @@ public class ModelBumboCactoni extends ModelBase {
 		this.arm_00_s3.setRotationPoint(-5.0F, -31.0F, 0.0F);
 		this.arm_00_s3.addBox(2.0F, -4.0F, -4.0F, 12, 8, 8, 0.0F);
 		this.setRotateAngle(arm_00_s3, 0.0F, 3.141592653589793F, 0.0F);
-		this.hat_22_s3 = new ModelRenderer(this, 5, 108);
+		this.hat_22_s3 = new ModelRenderer(this, 5, 109);
 		this.hat_22_s3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_22_s3.addBox(12.0F, -2.0F, -8.0F, 1, 2, 16, 0.0F);
-		this.hat_11_s3 = new ModelRenderer(this, 29, 56);
+		this.hat_11_s3 = new ModelRenderer(this, 29, 57);
 		this.hat_11_s3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_11_s3.addBox(-5.0F, -14.0F, -5.0F, 10, 5, 10, 0.0F);
-		this.hat_ext_1_s3 = new ModelRenderer(this, 18, 102);
+		this.hat_ext_1_s3 = new ModelRenderer(this, 18, 103);
 		this.hat_ext_1_s3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_ext_1_s3.addBox(9.0F, -2.0F, -11.0F, 1, 2, 22, 0.0F);
 		this.body_0_s3 = new ModelRenderer(this, 33, 0);
@@ -427,13 +426,13 @@ public class ModelBumboCactoni extends ModelBase {
 		this.mouth_1_s3 = new ModelRenderer(this, 12, 3);
 		this.mouth_1_s3.setRotationPoint(-2.0F, -36.0F, -7.2F);
 		this.mouth_1_s3.addBox(0.0F, 0.0F, 0.0F, 6, 1, 1, 0.0F);
-		this.hat_20_s3 = new ModelRenderer(this, 17, 104);
+		this.hat_20_s3 = new ModelRenderer(this, 17, 105);
 		this.hat_20_s3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_20_s3.addBox(10.0F, -2.0F, -10.0F, 1, 2, 20, 0.0F);
 		this.amr_01_s3 = new ModelRenderer(this, 0, 30);
 		this.amr_01_s3.setRotationPoint(10.0F, 0.0F, 0.0F);
 		this.amr_01_s3.addBox(-4.0F, -16.0F, -4.0F, 8, 12, 8, 0.0F);
-		this.hat_00_s3 = new ModelRenderer(this, 6, 108);
+		this.hat_00_s3 = new ModelRenderer(this, 6, 109);
 		this.hat_00_s3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_00_s3.addBox(-13.0F, -2.0F, -8.0F, 1, 2, 16, 0.0F);
 		this.body_3_s3 = new ModelRenderer(this, 64, 0);
@@ -443,7 +442,7 @@ public class ModelBumboCactoni extends ModelBase {
 		this.moustache_0_s3 = new ModelRenderer(this, 12, 0);
 		this.moustache_0_s3.setRotationPoint(-6.0F, -40.0F, -8.0F);
 		this.moustache_0_s3.addBox(0.0F, 0.0F, 0.0F, 6, 1, 1, 0.0F);
-		this.hat_02_s3 = new ModelRenderer(this, 18, 104);
+		this.hat_02_s3 = new ModelRenderer(this, 18, 105);
 		this.hat_02_s3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_02_s3.addBox(-11.0F, -2.0F, -10.0F, 1, 2, 20, 0.0F);
 		this.amr_11_s3 = new ModelRenderer(this, 0, 30);
@@ -456,7 +455,7 @@ public class ModelBumboCactoni extends ModelBase {
 		this.body_1_s3 = new ModelRenderer(this, 64, 0);
 		this.body_1_s3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.body_1_s3.addBox(-8.0F, -48.0F, 7.0F, 16, 48, 0, 0.0F);
-		this.hat_main_s3 = new ModelRenderer(this, 0, 100);
+		this.hat_main_s3 = new ModelRenderer(this, 0, 101);
 		this.hat_main_s3.setRotationPoint(0.0F, -48.0F, 0.0F);
 		this.hat_main_s3.addBox(-9.0F, -2.0F, -12.0F, 18, 2, 24, 0.0F);
 		this.moustache_6_s3 = new ModelRenderer(this, 12, 0);
@@ -468,13 +467,13 @@ public class ModelBumboCactoni extends ModelBase {
 		this.moustache_2_s3 = new ModelRenderer(this, 12, 0);
 		this.moustache_2_s3.setRotationPoint(-8.0F, -39.0F, -8.0F);
 		this.moustache_2_s3.addBox(0.0F, 0.0F, 0.0F, 6, 1, 1, 0.0F);
-		this.hat_21_s3 = new ModelRenderer(this, 6, 106);
+		this.hat_21_s3 = new ModelRenderer(this, 6, 107);
 		this.hat_21_s3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_21_s3.addBox(11.0F, -2.0F, -9.0F, 1, 2, 18, 0.0F);
-		this.hat_ext_0_s3 = new ModelRenderer(this, 19, 102);
+		this.hat_ext_0_s3 = new ModelRenderer(this, 19, 103);
 		this.hat_ext_0_s3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_ext_0_s3.addBox(-10.0F, -2.0F, -11.0F, 1, 2, 22, 0.0F);
-		this.hat_10_s3 = new ModelRenderer(this, 29, 54);
+		this.hat_10_s3 = new ModelRenderer(this, 29, 55);
 		this.hat_10_s3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		this.hat_10_s3.addBox(-6.0F, -9.0F, -6.0F, 12, 8, 12, 0.0F);
 		this.body_0_s3.addChild(this.moustache_1_s3);
@@ -523,9 +522,6 @@ public class ModelBumboCactoni extends ModelBase {
 	 * Sets the model various rotation angles then renders the model.
 	 */
 	public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
-
-		this.arm_00_s3.setTextureOffset(-8, 79);
-		this.amr_01_s3.setTextureOffset(-8, 79);
 
 //		int stage = ((EntityBumboCactoni) entityIn).disguiseStage;
 		this.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale, entityIn);
