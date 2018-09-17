@@ -98,7 +98,7 @@ public class EntityBumboCactoni extends EntityLiving {
 	@Override
 	public void onUpdate() {
 		super.onUpdate();
-		this.setEntityBoundingBox(new AxisAlignedBB(this.posX - 0.4375D, this.posY, this.posZ - 0.4375D, this.posX + 0.4375D, this.posY + 1.0D, this.posZ + 0.4375D));
+		this.setEntityBoundingBox(new AxisAlignedBB(this.posX - 0.4375D, this.posY, this.posZ - 0.4375D, this.posX + 0.4375D, this.posY + dataManager.get(SIZE).intValue() + (dataManager.get(SIZE) == 1 ? 0.25 : 0.0), this.posZ + 0.4375D));
 
 		BlockPos beginBlockPos = getPosition();
 		if(!(prevPosX == posX && prevPosY == posY && prevPosZ == posZ)) {
